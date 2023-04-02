@@ -7,8 +7,8 @@
 
 	add_action( 'wp_enqueue_scripts', 'my_scripts_and_styles' );
 	function my_scripts_and_styles(){
-		wp_enqueue_style( 'bootstrap', get_stylesheet_uri().'/view/libs/bootstrap/bootstrap-grid.min.css' );
-		wp_enqueue_style( 'style', get_stylesheet_uri().'/main.css' );
+		wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/view/libs/bootstrap/bootstrap-grid.min.css' );
+		wp_enqueue_style( 'style', get_template_directory_uri().'/main.css' );
 
 		wp_deregister_script( 'jquery' );
 		
