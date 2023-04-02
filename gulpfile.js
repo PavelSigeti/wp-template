@@ -4,7 +4,7 @@ const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 
 const cssFiles = [
 	'./view/scss/style.scss',
@@ -20,7 +20,7 @@ function styles(){
 		.pipe(sass().on('error', sass.logError))
 		.pipe(concat('main.css'))
 		.pipe(autoprefixer({
-			browsers: ['> 0.1%']
+			overrideBrowserslist: ['> 0.1%']
 		}))
 		.pipe(cleanCSS({
 			level: 2
